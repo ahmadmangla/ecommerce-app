@@ -11,10 +11,10 @@ export const useFetch = (url) => {
         const response = await fetch(url);
         if (!response.ok) throw new Error(response.statusText);
         const json = await response.json();
+        setData(json);
         setTimeout(() => {
           setIsPending(false);
         }, 2000);
-        setData(json);
         setError(null);
       } catch (error) {
         setError(`${error} Could not Fetch Data `);
@@ -23,5 +23,5 @@ export const useFetch = (url) => {
     };
     fetchData();
   }, [url]);
-  return { data, setData, isPending, error };
+  return { data, setData, isPending, error, setIsPending };
 };

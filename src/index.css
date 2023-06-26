@@ -11,3 +11,9 @@ code {
   background-color: #003d29;
   color: white;
 }
+
+.add-to-cart-btn.active {
+  background-color: #003d29;
+
+  color: white;
+}
